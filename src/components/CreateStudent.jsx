@@ -20,7 +20,7 @@ function CreateStudent() {
     <div>
         <h1>Create Student</h1>
 
-        <form>
+        <form onSubmit={handleSubmit}>
 
             <label htmlFor="name">Name:</label>
             <input 
