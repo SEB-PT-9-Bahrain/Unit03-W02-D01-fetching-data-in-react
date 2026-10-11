@@ -11,8 +11,10 @@ function CreateStudent() {
         setFormData({...formData,[event.target.name]:event.target.value})
     }
 
-    function handleSubmit(event){
+    async function handleSubmit(event){
         event.preventDefault()
+
+        const response = await axios.post('https://omar-ga-class.onrender.com/students',formData)
     }
   return (
     <div>
@@ -46,6 +48,8 @@ function CreateStudent() {
             value={formData.city}
             onChange={handleChange}
             />
+
+            <button>Create Student</button>
         </form>
     </div>
   )
