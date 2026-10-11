@@ -23,7 +23,11 @@ function StudentList() {
     <div>
         <h1>Students List</h1>
         
-        {students.map(()=><div></div>)}
+        {students.map((oneStudent)=>
+        <div key={oneStudent._id}>
+            <p>Name:{oneStudent.name}</p>
+        </div>
+        )}
     </div>
   )
 }
