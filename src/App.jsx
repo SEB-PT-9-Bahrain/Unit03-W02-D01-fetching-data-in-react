@@ -5,7 +5,7 @@ function App() {
     <div>
       <h1>Fetching Data in React Lesson</h1>
 
-      <StudentList/>
+      {/* <StudentList/> */}
       <CreateStudent/>
     </div>
   )
