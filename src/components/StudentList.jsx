@@ -6,7 +6,7 @@ function StudentList() {
 
 
     async function getAllStudents(){
-        const response = await axios.get('https://omar-ga-class.onrender.com/students')
+        const response = await axios.get(import.meta.env.VITE_API_URL + '/students')
         setStudents(response.data)
         console.log(response.data)
 
