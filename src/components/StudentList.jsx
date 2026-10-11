@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 function StudentList() {
     const [ students, setStudents ] = useState([])
 
+
+
     async function getAllStudents(){
         const response = await axios.get('https://omar-ga-class.onrender.com/students')
         setStudents(response.data)
@@ -19,6 +21,10 @@ function StudentList() {
 
     
 
+    async function deleteStudent(studentId){
+        const response = await axios.delete(`https://omar-ga-class.onrender.com/students/${studentId}`)
+        getAllStudents()
+    }
   return (
     <div>
         <h1>Students List</h1>
@@ -26,6 +32,7 @@ function StudentList() {
         {students.map((oneStudent)=>
         <div key={oneStudent._id}>
             <p>Name:{oneStudent.name}</p>
+            <button onClick={()=>{deleteStudent(oneStudent._id)}}>Delete Student</button>
         </div>
         )}
     </div>
